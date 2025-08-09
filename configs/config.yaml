@@ -1,0 +1,25 @@
+# Configuración del sistema de entrenamiento
+teacher:
+  model: "gpt-4"
+  api_key: "${OPENAI_API_KEY}"
+  max_questions_per_call: 5
+  
+student:
+  model_name: "microsoft/phi-1_5"  # o "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+  max_answer_tokens: 150
+  learning_rate: 2e-5
+  
+training:
+  questions_per_cycle: 10
+  max_cycles: 50
+  min_accuracy_threshold: 0.8
+  max_plateau_cycles: 5
+  
+evaluation:
+  baseline_questions: 20
+  test_set_size: 50
+  
+data:
+  input_path: "data/input/"
+  output_path: "data/output/"
+  logs_path: "data/logs/"
